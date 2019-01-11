@@ -17,4 +17,12 @@ game.playerHand = this.dataset.option
 hands.forEach(hand => hand.style.boxShadow = "")
 this.style.boxShadow = "0 0 0 4px black"
 }
+
+function startHGame (){
+    if(game.playerHand){
+        alert("make your choice")
+    }
+}
 hands.forEach(hand => hand.addEventListener("click", handSelection))
+
+document.querySelector(".start").addEventListener("click", startGame)
