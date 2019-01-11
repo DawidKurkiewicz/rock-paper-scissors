@@ -13,8 +13,8 @@
 
 .panels {
     flex-direction: row;
-
 }
+
 h1 {
     text-align: center;
     margin: 20px o;
@@ -33,7 +33,7 @@ h3 {
     display: inline-block;
     width: 48%;
     overflow: hidden;
-    margin: 40px auto 0;
+    margin: 40px auto 40px;
     text-align: center;
 }
 
@@ -89,3 +89,9 @@ button:hover {
 span {
     font-weight: bold;
 }
+@media only screen and (max-width: 600px) {
+    .panel-left,
+    .panel-right {
+        display: block;
+    }
+  }
