@@ -46,18 +46,23 @@ function publishResult(player, ai, result) {
         document.querySelector("p.wins span")
             .innerHTML = ++summary.wins;
         document.querySelector('[data-summary="who-win"]')
-        .innerHTML = "player won"
+            .innerHTML = "player won"
     } else if (result === "loss") {
         document.querySelector("p.losses span")
             .innerHTML = ++summary.losses;
         document.querySelector('[data-summary="who-win"]')
-        .innerHTML = "computer won"
+            .innerHTML = "computer won"
     } else {
         document.querySelector("p.draws span")
             .innerHTML = ++summary.draws;
         document.querySelector('[data-summary="who-win"]')
-        .innerHTML = "draw"
+            .innerHTML = "draw"
     }
+}
+
+function endGame() {
+document.querySelector(`[data-option="${game.playerHand}"]`).style.boxShadow = ""
+game.playerHand = ""
 }
 function startGame() {
     if (!game.playerHand) {
@@ -66,6 +71,7 @@ function startGame() {
     game.aiHand = computerChoice()
     const gameResult = checkResult(game.playerHand, game.aiHand)
     publishResult(game.playerHand, game.aiHand, gameResult)
+    endGame()
 }
 hands.forEach(hand => hand.addEventListener("click", handSelection))
 
