@@ -11,6 +11,40 @@
 </head>
 
 <body>
+    <div class=container>
+        <h1>Rock paper scissors</h1>
+
+        <div class="select">
+
+            <h3>Pick:</h3>
+
+            <img data-option="papier" class="first" src="papier.jpg" alt="" title="Papier">
+
+            <img data-option="kamień" src="kamien.jpg" alt="" title="Kamień">
+
+            <img data-option="nożyczki" src="nozyczki.jpg" alt="" title="nożyczki">
+
+        </div>
+
+        <button class="start">Let's play!</button>
+        <div class=panels>
+            <div class="panel-left">
+                <h3>Score</h3>
+                <p>You: <span data-summary="your-choice"></span></p>
+                <p>Computer: <span data-summary="ai-choice"></span></p>
+                <h2>Winner: <span data-summary="who-win"></span></h2>
+            </div>
+
+            <div class="panel-right">
+                <h3>Current score</h3>
+                <p class="numbers">players: <span>0</span></p>
+                <p class="wins">wins: <span>0</span></p>
+                <p class="losses">loses: <span>0</span></p>
+                <p class="draws">draws: <span>0</span></p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
