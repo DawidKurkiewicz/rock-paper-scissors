@@ -27,7 +27,9 @@ function checkResult(player, ai) {
     } else if ((player === "paper" && ai === "rock") ||
         (player === "rock" && ai === "scissors") ||
         (player === "scissors" && ai === "paper")) {
-        console.log("Win")
+        console.log("win")
+    } else {
+        console.log ("lose")
     }
 }
 
