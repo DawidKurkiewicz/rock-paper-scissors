@@ -23,22 +23,32 @@ function computerChoice() {
 }
 function checkResult(player, ai) {
     if (player === ai) {
-        console.log("draw")
+        return "draw"
     } else if ((player === "paper" && ai === "rock") ||
         (player === "rock" && ai === "scissors") ||
         (player === "scissors" && ai === "paper")) {
-        console.log("win")
+        return "win"
     } else {
-        console.log ("lose")
+        return "loss"
     }
 }
+function publishResult(player, ai, result) {
+    document.querySelector('[data-summary="your-choice"]')
+        .innerHTML = player
 
+    document.querySelector('[data-summary="ai-choice"]')
+        .innerHTML = ai
+
+        document.querySelector("p.numbers span")
+        .innerHTML = ++summary.number
+}
 function startGame() {
     if (!game.playerHand) {
         return alert("make your choice")
     }
     game.aiHand = computerChoice()
     const gameResult = checkResult(game.playerHand, game.aiHand)
+    publishResult(game.playerHand, game.aiHand, gameResult)
 }
 hands.forEach(hand => hand.addEventListener("click", handSelection))
 
