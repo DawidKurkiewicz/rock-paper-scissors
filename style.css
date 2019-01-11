@@ -20,9 +20,10 @@ h1 {
 .panel {
     margin: 20px;
 }
-.panel-right{
-    padding: 12px
+.panels {
+    display: inline-block
 }
+
 .panel-left,
 .panel-right {
     display: inline-block;
@@ -30,6 +31,7 @@ h1 {
     overflow: hidden;
     margin: 40px auto 40px;
     text-align: center;
+    height: 400px
 }
 
 .panel-left p {

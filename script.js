@@ -1,7 +1,7 @@
 const summary = {
     number: 0,
     wins: 0,
-    loses: 0,
+    losses: 0,
     draws: 0
 }
 
@@ -39,8 +39,25 @@ function publishResult(player, ai, result) {
     document.querySelector('[data-summary="ai-choice"]')
         .innerHTML = ai
 
-        document.querySelector("p.numbers span")
+    document.querySelector("p.numbers span")
         .innerHTML = ++summary.number
+
+    if (result === "win") {
+        document.querySelector("p.wins span")
+            .innerHTML = ++summary.wins;
+        document.querySelector('[data-summary="who-win"]')
+        .innerHTML = "player won"
+    } else if (result === "loss") {
+        document.querySelector("p.losses span")
+            .innerHTML = ++summary.losses;
+        document.querySelector('[data-summary="who-win"]')
+        .innerHTML = "computer won"
+    } else {
+        document.querySelector("p.draws span")
+            .innerHTML = ++summary.draws;
+        document.querySelector('[data-summary="who-win"]')
+        .innerHTML = "draw"
+    }
 }
 function startGame() {
     if (!game.playerHand) {
