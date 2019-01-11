@@ -6,22 +6,37 @@ const summary = {
 }
 
 const game = {
-playerHand: null,
-aiHand: null
+    playerHand: null,
+    aiHand: null
 }
 
 const hands = [...document.querySelectorAll(".select img")]
 
 function handSelection() {
-game.playerHand = this.dataset.option
-hands.forEach(hand => hand.style.boxShadow = "")
-this.style.boxShadow = "0 0 0 4px black"
+    game.playerHand = this.dataset.option
+    hands.forEach(hand => hand.style.boxShadow = "")
+    this.style.boxShadow = "0 0 0 4px black"
 }
 
-function startHGame (){
-    if(game.playerHand){
-        alert("make your choice")
+function computerChoice() {
+    return hands[Math.floor(Math.random() * 3)].dataset.option
+}
+function checkResult(player, ai) {
+    if (player === ai) {
+        console.log("draw")
+    } else if ((player === "paper" && ai === "rock") ||
+        (player === "rock" && ai === "scissors") ||
+        (player === "scissors" && ai === "paper")) {
+        console.log("Win")
     }
+}
+
+function startGame() {
+    if (!game.playerHand) {
+        return alert("make your choice")
+    }
+    game.aiHand = computerChoice()
+    const gameResult = checkResult(game.playerHand, game.aiHand)
 }
 hands.forEach(hand => hand.addEventListener("click", handSelection))
 
