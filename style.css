@@ -11,17 +11,13 @@
     margin: 60px;
 }
 
-.panels {
-    flex-direction: row;
-}
-
 h1 {
     text-align: center;
-    margin: 20px o;
+    margin: 20px 0;
 }
 
 h3 {
-    margin: 30px o;
+    margin: 30px 0;
 }
 
 .panel {
